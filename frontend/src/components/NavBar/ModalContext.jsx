@@ -62,7 +62,8 @@ export default function ModalContent({ onClose }) {
       function submitAddress(event){
         event.preventDefault()
         console.log(address)
-        fetch(`https://api.mapbox.com/search/geocode/v6/forward?q=${address}&access_token=pk.eyJ1IjoiYXNtaXRoeHUiLCJhIjoiY21la3p3ZnR4MDNyNDJscTJ1OXkzMGJzaiJ9.MNlV8jif8DPWs_OYaxtf5w`)
+        const apiKey = import.meta.env.VITE_API_KEY
+        fetch(`https://api.mapbox.com/search/geocode/v6/forward?q=${address}&access_token=${apiKey}`)
         .then((response) => response.json())
         .then((json) => {
           let features = json.features[0]
