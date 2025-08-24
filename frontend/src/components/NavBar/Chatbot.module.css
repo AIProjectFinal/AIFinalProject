@@ -151,3 +151,18 @@ input {
 .userMessage {
     margin-bottom: 40px;
 }
+
+
+.address  {
+    display:flex;
+     flex-direction: row;
+    border-bottom: 1px black solid;
+    padding:10px;
+    flex-shrink: 1;
+}
+ input {
+outline: none;
+border: none;
+color:rgb(0, 0, 0);
+
+}

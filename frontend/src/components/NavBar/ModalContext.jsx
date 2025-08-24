@@ -40,7 +40,7 @@ export default function ModalContent({ onClose }) {
             y.className = styles.messageText;
             y.innerHTML = `${message.content}`;
             if (message.role === "system"){
-                y.innerHTML = "Greetings 🌿, my name is Herb. How can I assist you?"};
+                y.innerHTML = "Hey there! 👋 I'm here to help you find tasty spots in Memphis that should line up with your dietary needs — whether that's vegan, gluten-free, dairy-free,or all of the above. I'll do my best to point you toward the right places."};
             x.appendChild(y);
             parentNode.appendChild(x);
             i++
@@ -62,7 +62,8 @@ export default function ModalContent({ onClose }) {
       function submitAddress(event){
         event.preventDefault()
         console.log(address)
-        fetch(`https://api.mapbox.com/search/geocode/v6/forward?q=${address}&access_token=pk.eyJ1IjoiYXNtaXRoeHUiLCJhIjoiY21la3p3ZnR4MDNyNDJscTJ1OXkzMGJzaiJ9.MNlV8jif8DPWs_OYaxtf5w`)
+        const apiKey = import.meta.env.VITE_API_KEY
+        fetch(`https://api.mapbox.com/search/geocode/v6/forward?q=${address}&access_token=${apiKey}`)
         .then((response) => response.json())
         .then((json) => {
           let features = json.features[0]
@@ -79,18 +80,31 @@ export default function ModalContent({ onClose }) {
 
         {/* Chatbot Header */}
         <div className={styles.chatHeader}>
+
+
           <div className={styles.headerInfo}>
             <h2 className={styles.logoText}>Herb</h2>
           </div>
+
+
+
           <button className={styles.iconButton}>
             <KeyboardArrowDownIcon className={styles.keyboardDown} onClick={onClose}/>
           </button>
+
+
         </div>
           <div>
-            <form>
+          </div>
+
+        {/* Chat Body */}
+        <div className={styles.chatBody} id="chatBody">
+          {/* Bot Message */}
+
+               <form className={styles.address}>
                 <input 
                   type="text"
-                  placeholder="Address" 
+                  placeholder="Add Address" 
                   value={address}
                   name="name" 
                   onChange={(event) => setAddress(event.target.value)}
@@ -99,14 +113,9 @@ export default function ModalContent({ onClose }) {
                   Button
                 </button>
             </form>
-          </div>
-
-        {/* Chat Body */}
-        <div className={styles.chatBody} id="chatBody">
-          {/* Bot Message */}
           <div className={styles.botMessage}>
             <p className={styles.messageText}>
-              Greetings 🌿, my name is Herb. How can I assist you?
+              Hey there! 👋 I'm here to help you find tasty spots in Memphis that should line up with your dietary needs — whether that's vegan, gluten-free, dairy-free,or all of the above. I'll do my best to point you toward the right places.
             </p>
           </div>
 

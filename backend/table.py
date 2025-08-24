@@ -20,8 +20,8 @@ def restaurant_info_layout(restaurants):
     # Iterate over the houses
         # For each house, append the information to the string using f-strings
         # The following way using brackets is a good way to make the code readable as in each line you can start a new f-string that will appended to the previous one
-    layout = (f"Restaurant Name: {restaurants['restaurant_name']}, Cuisine Type: {restaurants['cuisine_type']}, Service Style: {restaurants['service_style']}"
-            f"Meal Focus: {restaurants['meal_focus']} Description: {restaurants['description']} \n\n")
+    layout = (f"RESTAURANT NAME: {restaurants['restaurant_name']}, CUISINE TYPE: {restaurants['cuisine_type']}, SERVICE STYLE: {restaurants['service_style']}"
+            f"MEAL FOCUS: {restaurants['meal_focus']} DESCRIPTION: {restaurants['description']} \n\n")
         
     return layout
 
