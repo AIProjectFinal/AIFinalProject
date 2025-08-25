@@ -38,7 +38,10 @@ export default function ModalContent({ onClose }) {
             x.id = `${i}`
             let y = document.createElement('p');
             y.className = styles.messageText;
-            y.innerHTML = `${message.content}`;
+            if (message.role === "user");
+              y.innerText = `${message.content}`;
+            if (message.role === "assistant");
+              y.innerHTML = `${message.content}`;
             if (message.role === "system"){
                 y.innerHTML = "Hey there! 👋 I'm here to help you find tasty spots in Memphis that should line up with your dietary needs — whether that's vegan, gluten-free, dairy-free,or all of the above. I'll do my best to point you toward the right places."};
             x.appendChild(y);
