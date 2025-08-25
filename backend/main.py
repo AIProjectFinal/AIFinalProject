@@ -261,6 +261,10 @@ class Message(BaseModel):
     lat:float | None = None
     long:float | None = None
 
+@app.get("/")
+async def get_chat_history():
+    return conversation_history
+
 @app.post("/ask")
 async def create_message(message: Message):
     server_response = chat_with_gpt(generate_prompt(message.message, message.long, message.lat))

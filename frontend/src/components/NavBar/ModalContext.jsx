@@ -55,12 +55,56 @@ export default function ModalContent({ onClose }) {
         lastChatMessage.scrollIntoView({behavior:'smooth', block:'start'})
 
       }
+
+      async function loadChat(){    
+      const response = await fetch("http://localhost:5678/")
+      const conversation =  await response.json()
+
+      const parentNode = document.getElementById("chatBody")
+
+      while (parentNode.firstChild) {
+        parentNode.removeChild(parentNode.firstChild);
+        }
+        let i = 0
+        conversation.forEach(message => {
+            let x = document.createElement('div');
+            if (message.role === "assistant"){
+                x.className = styles.botMessage;}
+            else if (message.role === "user"){
+                x.className = styles.userMessage;}
+            else if (message.role === "system"){
+                x.className = styles.botMessage;}
+            x.id = `${i}`
+            let y = document.createElement('p');
+            y.className = styles.messageText;
+            if (message.role === "user");
+              y.innerText = `${message.content}`;
+            if (message.role === "assistant");
+              y.innerHTML = `${message.content}`;
+            if (message.role === "system"){
+                y.innerHTML = "Hey there! 👋 I'm here to help you find tasty spots in Memphis that should line up with your dietary needs — whether that's vegan, gluten-free, dairy-free,or all of the above. I'll do my best to point you toward the right places."};
+            x.appendChild(y);
+            parentNode.appendChild(x);
+            i++
+    })
+        if (conversation.length > 2) {
+          let target = conversation.length - 2
+          target = `${target}`
+          console.log(target)
+          let lastChatMessage = document.getElementById(target)
+          lastChatMessage.scrollIntoView({behavior:'smooth', block:'start'})}
+
+      }
     
       function handleSubmit(event){
           event.preventDefault();
           askAssistant();
           setQuery("")
       }
+
+      useEffect(()=> {
+        loadChat()
+      }, []);
     
       function submitAddress(event){
         event.preventDefault()
