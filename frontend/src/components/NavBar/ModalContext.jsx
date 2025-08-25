@@ -11,7 +11,7 @@ export default function ModalContent({ onClose }) {
     
       async function askAssistant(){
       const body = {"message": query}
-      if (address.length > 0){
+      if (lat.length > 0){
         body.lat = lat
         body.long = long
       }
@@ -117,6 +117,7 @@ export default function ModalContent({ onClose }) {
           let coor = features.geometry.coordinates
           setLong(`${coor[0]}`)
           setLat(`${coor[1]}`)
+          setAddress("")
         });
       }
 
@@ -143,12 +144,24 @@ export default function ModalContent({ onClose }) {
         </div>
           <div>
           </div>
+               <form className={styles.address}>
+                <input 
+                  type="text"
+                  placeholder="Add Address" 
+                  value={address}
+                  name="name" 
+                  onChange={(event) => setAddress(event.target.value)}
+                />
+                <button onClick={submitAddress}>
+                  Submit
+                </button>
+            </form>
 
         {/* Chat Body */}
         <div className={styles.chatBody} id="chatBody">
           {/* Bot Message */}
 
-               <form className={styles.address}>
+               {/* <form className={styles.address}>
                 <input 
                   type="text"
                   placeholder="Add Address" 
@@ -159,12 +172,12 @@ export default function ModalContent({ onClose }) {
                 <button onClick={submitAddress}>
                   Button
                 </button>
-            </form>
-          <div className={styles.botMessage}>
+            </form> */}
+          {/* <div className={styles.botMessage}>
             <p className={styles.messageText}>
               Hey there! 👋 I'm here to help you find tasty spots in Memphis that should line up with your dietary needs — whether that's vegan, gluten-free, dairy-free,or all of the above. I'll do my best to point you toward the right places.
             </p>
-          </div>
+          </div> */}
 
           {/* User Message */}
           {/* <div className={styles.userMessage}>
