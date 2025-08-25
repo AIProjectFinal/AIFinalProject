@@ -12,6 +12,7 @@ from google import genai
 from google.genai import types
 import chromadb
 import pandas as pd
+import requests
 
 load_dotenv()
 key = os.environ['GEMINI_API_KEY']
@@ -119,7 +120,7 @@ def generate_prompt(query, long, lat):
           ORDER BY description_embeddings <=> '{query_vector}' 
           LIMIT 5;
           """)
-      data = curr.fetchall()
+      data = curr.fetchall()            
       if data: 
         for row in data:
           distance_meters = row[1]
@@ -260,6 +261,10 @@ class Message(BaseModel):
     message:str
     lat:float | None = None
     long:float | None = None
+
+@app.get("/")
+async def get_chat_history():
+    return conversation_history
 
 @app.post("/ask")
 async def create_message(message: Message):

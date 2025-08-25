@@ -9,12 +9,12 @@
 }
 .chatbotPopup {
     width:700px;
-    height:400px;
+    height:480px;
     background-color: white;
     box-shadow: 1px 1px 30px rgb(21, 7, 7);
     position: absolute;
     z-index:1;
-    top:55%;
+    top:50%;
     left:50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
@@ -67,7 +67,7 @@ background-color: #7ea9334c;
     gap:20px;
     overflow-y:auto;
     padding:25px 22px;
-    height:210px;
+    height:250px;
     position: relative;
     margin-top: 20px;
 }
@@ -165,4 +165,8 @@ outline: none;
 border: none;
 color:rgb(0, 0, 0);
 
+}
+
+a { 
+    color: darkgreen
 }
