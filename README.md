@@ -1,13 +1,17 @@
 # AIFinalProject
 ## Root and Revive
-This is an App that will make it easier for users to find menu items that fit their dietary requirements when they visit a restaurant. A chatbot can help them plan and budget their meals when they eat out. 
+This is an App that will make it easier for users to find menu items that fit their dietary requirements when they visit a restaurant. A chatbot can help them plan and budget their meals when they eat out.
+
+Team members:
++ Felicia
++ Ayana
 
 ## Setup Guide
 
-+ React
++ React Installation
     + npm install
 
-+ Python
++ Python Installation
     + sudo apt update
     + sudo apt install python3 python3-pip
 + Create a virtual environment
@@ -25,16 +29,15 @@ This is an App that will make it easier for users to find menu items that fit th
 ## Tech Stack
  
 + React
-+ MongoDB
++ PostgreSQL
 + Python 
-+ Flask
++ FastAPI
 
 ## AI Model Description
 
-This is BERT model that has been fined tuned on Restaurant Data for text classification. It is being used to classify the descriptions for restaurants around Memphis as Gluten-Free, Vegan, or Dairy-Free.
+The backend uses a RAG system to generate a response from a user input. The app focuses on helping users find Memphis restaurants that meet their dietary restrictions, but the generator model also answers questions related to more general queries. 
 
-https://colab.research.google.com/drive/1CfpGmz0kVQ6MOosfRTzQUdHkT7mtSaQn?usp=sharing
++ Embedding and Retriever model - multi-qa-mpnet-base-cos-v1 - This model is ideal because it was designed for semantic search
++ Database - PostgresSQL - This is a free SQL database that enables a vector search, metadata filtering, and a geospatial search. The extension pg_vector enables a vector search and the extension postgis enables the geospatial search.
++ Generator model - Gemini - This model worked best for the cost constraints of the project. 
 
-Team members:
-+ Felicia
-+ Ayana
