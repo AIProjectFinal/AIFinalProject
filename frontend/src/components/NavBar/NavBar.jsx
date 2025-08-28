@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import styles from "./NavBar.module.css";
-import Button from "../Button/Button.jsx";
 import Popup from "../Popup/Popup.jsx";
 import PortalExample from './PortalExample';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faShoppingBasket, faCommentDots } from '@fortawesome/free-solid-svg-icons';
 
 function NavBar() {
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const handleChatButtonClick = () => {
     setIsChatOpen(true);
@@ -16,18 +18,40 @@ function NavBar() {
     setIsChatOpen(false);
   };
 
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    console.log('Searching for:', searchTerm);
+  };
+
   return (
     <nav className={styles.navBar}>
       <h3 className={styles.logo}>Root & Revive</h3>
-      <div className={styles.pages}>
-        <a href="/" className={styles.active}>Home</a>
-        <a href="/restaurant">Restaurant</a>
-        <a href="/Contact">Contact</a>
-        <a href="/about">Mission</a>
+      
+   
+      <form className={styles.searchForm} onSubmit={handleSearchSubmit}>
+        <input
+          type="text"
+          placeholder="Search for food..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className={styles.searchInput}
+        />
+      </form>
+
+      <div className={styles.iconContainer}>
+        <div className={styles.icon} title="User Profile">
+          <FontAwesomeIcon icon={faUser} />
+        </div>
+        <div className={styles.icon} title="Shopping Basket">
+          <FontAwesomeIcon icon={faShoppingBasket} />
+        </div>
+        <PortalExample />
       </div>
-      {/* <Button name="Ask Herb" onClick={handleChatButtonClick} /> */}
-      <PortalExample/>
-        
+
       {isChatOpen && <Popup onClose={handleClosePopup} />}
     </nav>
   );

@@ -10,7 +10,6 @@ const Layout = ({children}) => {
     return (
     <div className = "app-shell">
      <NavBar />
-     {/* <Chatbot />  */}
     <main className ="pageContent">
     <Button name="Donate" color="#A6CA6D" className={styles.donateButton}/>
         {children}

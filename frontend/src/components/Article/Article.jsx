@@ -9,8 +9,8 @@ import styles from "./Article.module.css";
 function Article({ description}) { 
     return (
         < div className={styles.ArticleContainer}>
-        <article className={styles.Article}>
-    <p>{description}</p></article> 
+        <article className={styles.Article}></article> 
+         <p>{description}</p>
         </div>
     )
 };

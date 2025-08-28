@@ -10,10 +10,10 @@ const Button = ({ name, color = '#ff7194', borderRadius ='0', className }) => {
     border: 'none',
     textTransform: 'uppercase',
     fontSize: '15px',
-    fontWeight: 500,
+    fontWeight: 300,
     marginTop: '10px',
     letterSpacing: '1px',
-    fontFamily: "Alexandria, sans-serif",
+    fontFamily: "Montserrat, sans-serif", 
   };
 
   return (

@@ -6,13 +6,10 @@ import styles from "./Home.module.css";
 //Components
 import Article from "../../components/Article/Article.jsx";
 import Layout from "../../components/Layout/Layout.jsx"; 
-//import MemphisMap from "../../components/Map/Map.jsx"; 
 
 //Images
-import ratishImage from '../../assets/ratish.png';
-import One from '../../assets/1.png';
-import Two from '../../assets/2.png';
-import Three from '../../assets/3.png';
+
+import citysilo from '../../assets/citysilo.jpg';
 
 const Home =() => {
 return(
@@ -24,9 +21,7 @@ return(
 
 
   <div className={styles.hero}>
-     <h1>Rooted in <span className={styles.underlineText}>  Community, </span>  Revived by Food </h1>
-    <p className={styles.heroText}> Connecting you to the freshest
-    local produce, crafted into vibrant meals. </p>
+  <div className={styles.heroImage}> </div>
   </div>
 
 
@@ -37,19 +32,13 @@ return(
 </section>
 
 <div className={styles.reccomendations}>
-  <Article description={"Article 1 description"}/>
-  <Article description={"Article 2 description"}/>
-  <Article description={"Article 3 description"}/>
+  <h4>Best Vegan Bakery's in Memphis:</h4>
+<div className={styles.reccomendationsRestaurant}>
+  <Article description={"The Pink Bakery"}/>
+  <Article description={"Muddy's Bake Shop"}/>
+  <Article description={"Frost Bake Shop"}/>
+  </div>
 </div>
-
-<section className={styles.section}></section>
-
-
-<section className={styles.sectionGrid}>
-  <img src={One} alt="" />
-  <img src={Two} alt="" />
-  <img src={Three} alt="" />
-</section>
 
 </main>
 </Layout>

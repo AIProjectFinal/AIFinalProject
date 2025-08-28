@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
     padding:40px 80px 40px 80px;    
-     background-color: #0f2721;
+     background-color: #ffffff;
 }
 
 .pages {
@@ -17,9 +17,9 @@
 .pages a {
     letter-spacing: 1.5px;
     text-decoration: none;
-    color:white;
+    color:rgb(0, 0, 0);
     font-size: 18px;
-    font-weight: 100;
+    font-weight: 200;
 }
 
 a:hover {
@@ -34,12 +34,38 @@ a:hover {
 
 
 .logo {
-    color:white;
+    color:rgb(0, 0, 0);
     font-weight: 100;
 
 }
 
 
-button {
-    background-color: 6CA219;
+.icon {
+    font-size: 1.4rem;
+    color: #d6d6d6;
+}
+
+.iconContainer {
+    display: flex;
+    gap:30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchForm {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.searchInput {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 12px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  font-size: 0.8em;
+  font-family: "Montserrat", sans-serif;
 }
