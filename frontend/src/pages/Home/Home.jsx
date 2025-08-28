@@ -11,6 +11,9 @@ import Layout from "../../components/Layout/Layout.jsx";
 
 import citysilo from '../../assets/citysilo.jpg';
 import veganDish from '../../assets/veganDish.webp';
+import frostbakery from '../../assets/frostbakery.jpg';
+import pinkbakery from '../../assets/pinkbakery.jpg';
+import muddybakery from '../../assets/muddybakery.jpg';
 
 const Home =() => {
 return(
@@ -35,29 +38,23 @@ return(
 <div className={styles.reccomendations}>
   <h4>Vegan Bakery's in Memphis:</h4>
 <div className={styles.reccomendationsRestaurant}>
-  <Article description={"The Pink Bakery"}/>
-  <Article description={"Muddy's Bake Shop"}/>
-  <Article description={"Frost Bake Shop"}/>
+<Article id="pink-bakery" description={"The Pink Bakery"} />
+<Article id="muddy-bakeshop" description={"Muddy's Bake Shop"} />
+<Article id="frost-bakeshop" description={"Frost Bake Shop"} />
   </div>
 </div>
 
 <div className={styles.newsletter}>
   <div className={styles.newsletterLeft}>
-    
+   
   </div>
   <div className={styles.newsletterRight}>
-    <form className={styles.newsletterForm}>
-      <h2 className={styles.newsletterTitle}>Subscribe to our Newsletter</h2>
-      <input
-        type="email"
-        placeholder="Enter your email"
-        required
-        className={styles.emailInput}
-      />
-      <button type="submit" className={styles.subscribeButton}>
-        Subscribe
-      </button>
-    </form>
+    <h2 className={styles.newsletterTitle}>Embrace a Vegan Lifestyle!</h2>
+    <p className={styles.promoText}>
+      Discover delicious plant-based recipes, health tips, and eco-friendly choices.
+      Join us in making a positive impact on your health and the planet.
+    </p>
+   
   </div>
 </div>
 
