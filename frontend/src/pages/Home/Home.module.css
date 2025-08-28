@@ -49,7 +49,7 @@ section h1 {
 .heroImage {
     background-image: url('../../assets/citysilo.jpg');
     width: 100%;
-    height: 18.75rem;
+    height: 20rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -59,20 +59,23 @@ section h1 {
 .reccomendations {
     display: flex;
     flex-direction: column;
-    margin: 40px;
+     align-items: flex-start;
+    margin: 20px;
+    gap:20px;
 }
 
-.reccomendations h4 {
-    font-weight: 200;
-    margin-left: 20px;
-    font-family: "Montserrat", sans-serif;
+.reccomendations h3 {
+    font-weight: 100;
+    font-size: 2.5rem;
+    text-align: center;
+  
 }
 
 
 .reccomendationsRestaurant {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.625rem;
+    gap: 3rem;
     align-items: center;
     justify-content: center;
 }
@@ -116,21 +119,28 @@ color:rgb(5, 34, 42);
     text-transform: uppercase;
 }
 
-.pink-bakery {
- background-image: url('../../assets/veganDish.webp');
-    width:50%;
-    background-position: center;
+
+.PinkBakery {
+  background-image: url('../../assets/frostbakery.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200px; 
+  width: 300px;  
+
 }
 
-.muddy-bakeshop {
- background-image: url('../../assets/veganDish.webp');
-    width:50%;
-    background-position: center;
+.MuddysBakeShop{
+  background-image: url('../../assets/muddybakery.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  width: 300px;
 }
 
-.frost-bakeshop {
- background-image: url('../../assets/veganDish.webp');
-    width:50%;
-    background-position: center;
+.FrostBakeShop {
+  background-image: url('../../assets/pinkbakery.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  width: 300px;
 }
-

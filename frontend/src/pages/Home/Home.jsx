@@ -36,11 +36,13 @@ return(
 </section>
 
 <div className={styles.reccomendations}>
-  <h4>Vegan Bakery's in Memphis:</h4>
+  <h3>Vegan Bakery's in Memphis:</h3>
 <div className={styles.reccomendationsRestaurant}>
-<Article id="pink-bakery" description={"The Pink Bakery"} />
-<Article id="muddy-bakeshop" description={"Muddy's Bake Shop"} />
-<Article id="frost-bakeshop" description={"Frost Bake Shop"} />
+
+<Article id="pink-bakery" description={"The Pink Bakery"} bgClass={styles.PinkBakery} />
+<Article id="muddy-bakeshop" description={"Muddy's Bake Shop"} bgClass={styles.MuddysBakeShop} />
+<Article id="frost-bakeshop" description={"Frost Bake Shop"} bgClass={styles.FrostBakeShop} />
+
   </div>
 </div>
 

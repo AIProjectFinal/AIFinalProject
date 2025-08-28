@@ -5,8 +5,8 @@ import styles from "./Article.module.css";
 
 function Article({ description, bgClass }) { 
     return (
-        <div className={`${styles.ArticleContainer} ${bgClass}`}>
-            <article className={styles.Article}></article> 
+        <div className={styles.ArticleContainer}>
+            <article className={`${styles.Article} ${bgClass}`}></article>
             <p>{description}</p>
         </div>
     );
