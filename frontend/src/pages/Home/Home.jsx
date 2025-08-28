@@ -21,19 +21,15 @@ return(
 <main >
 
    
-  <div className={styles.content}>
 
-  <div className={styles.left}>
+
+  <div className={styles.hero}>
      <h1>Rooted in <span className={styles.underlineText}>  Community, </span>  Revived by Food </h1>
     <p className={styles.heroText}> Connecting you to the freshest
     local produce, crafted into vibrant meals. </p>
   </div>
 
 
-  <div className={styles.right}>
-    <img src={ratishImage} alt="a ratish" />
-  </div>
-  </div>
 <section className={styles.section}>
   <h1>
     “ We're rooted in finding you the best <span className={styles.greenText}>

@@ -10,7 +10,7 @@ export default function PortalExample() {
     backgroundColor: '#ff7194',
     color: 'white',
     padding: '18px 25px',
-    borderRadius: '5px',
+    borderRadius: '0px',
     cursor: 'pointer',
     border: 'none',
     textTransform: 'uppercase',

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({ name, color = '#ff7194', borderRadius ='5px', className }) => {
+const Button = ({ name, color = '#ff7194', borderRadius ='0', className }) => {
   const styles = {
     backgroundColor: color,
     color: 'white',
