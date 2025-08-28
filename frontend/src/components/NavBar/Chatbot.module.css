@@ -11,14 +11,15 @@
     width:800px;
     height:400px;
     background-color: white;
-    box-shadow: 1px 1px 30px rgb(21, 7, 7);
+    box-shadow: 1px 1px 30px rgba(21, 7, 7, 0.091);
     position: absolute;
     z-index:1;
     top:55%;
     left:50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
-    border-radius: 0px;
+    border-radius: 10px;
+
 }
 
 .chatbotPopup .chatHeader {
